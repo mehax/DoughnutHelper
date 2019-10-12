@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoughnutHelper.Persistence.Migrations
 {
     [DbContext(typeof(DoughnutHelperDbContext))]
-    [Migration("20191010225217_InitialCreate")]
+    [Migration("20191012151336_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,7 +31,10 @@ namespace DoughnutHelper.Persistence.Migrations
                     b.Property<int>("Answer")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuestionId")
+                    b.Property<int?>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuestionMessageId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -46,12 +49,18 @@ namespace DoughnutHelper.Persistence.Migrations
                     b.ToTable("Choices");
                 });
 
-            modelBuilder.Entity("DoughnutHelper.Domain.Entities.Question", b =>
+            modelBuilder.Entity("DoughnutHelper.Domain.Entities.Messsage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ByAnswer")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsQuestion")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
@@ -63,7 +72,7 @@ namespace DoughnutHelper.Persistence.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("DoughnutHelper.Domain.Entities.User", b =>
@@ -83,11 +92,9 @@ namespace DoughnutHelper.Persistence.Migrations
 
             modelBuilder.Entity("DoughnutHelper.Domain.Entities.Choice", b =>
                 {
-                    b.HasOne("DoughnutHelper.Domain.Entities.Question", "Question")
+                    b.HasOne("DoughnutHelper.Domain.Entities.Messsage", "Question")
                         .WithMany()
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("QuestionId");
 
                     b.HasOne("DoughnutHelper.Domain.Entities.User", "User")
                         .WithMany()
@@ -96,9 +103,9 @@ namespace DoughnutHelper.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DoughnutHelper.Domain.Entities.Question", b =>
+            modelBuilder.Entity("DoughnutHelper.Domain.Entities.Messsage", b =>
                 {
-                    b.HasOne("DoughnutHelper.Domain.Entities.Question", "Parent")
+                    b.HasOne("DoughnutHelper.Domain.Entities.Messsage", "Parent")
                         .WithMany()
                         .HasForeignKey("ParentId");
                 });
