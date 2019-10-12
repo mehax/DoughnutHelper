@@ -14,4 +14,8 @@
       <ProjectReference Include="..\DoughnutHelper.Domain\DoughnutHelper.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
 </Project>

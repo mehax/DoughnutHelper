@@ -1,4 +1,8 @@
+using System.Reflection;
+using DoughnutHelper.Application.Messages.Queries;
 using DoughnutHelper.Persistence;
+using MediatR;
+using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
@@ -21,6 +25,11 @@ namespace DoughnutHelper.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add MediatR (Application)
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddMediatR(typeof(GetNextMessageQuery).GetTypeInfo().Assembly);
+            
+            // Add DbContext (Persistence)
             services.AddDbContext<DoughnutHelperDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             

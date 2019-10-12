@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughnutHelper.Persistence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughnutHelper.Domain", "DoughnutHelper.Domain\DoughnutHelper.Domain.csproj", "{3215DBD9-4783-4F17-A879-82260D9D995D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughnutHelper.Application", "DoughnutHelper.Application\DoughnutHelper.Application.csproj", "{A6F9D073-5C58-4808-A1D4-23651AF50D6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3215DBD9-4783-4F17-A879-82260D9D995D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3215DBD9-4783-4F17-A879-82260D9D995D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3215DBD9-4783-4F17-A879-82260D9D995D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F9D073-5C58-4808-A1D4-23651AF50D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F9D073-5C58-4808-A1D4-23651AF50D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F9D073-5C58-4808-A1D4-23651AF50D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F9D073-5C58-4808-A1D4-23651AF50D6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

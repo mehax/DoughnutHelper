@@ -7,7 +7,7 @@ namespace DoughnutHelper.Persistence
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Choice> Choices { get; set; }
-        public DbSet<Question> Questions { get; set; }
+        public DbSet<Message> Messages { get; set; }
         
         public DoughnutHelperDbContext(DbContextOptions<DoughnutHelperDbContext> options) : base(options)
         {

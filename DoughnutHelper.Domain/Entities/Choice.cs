@@ -6,10 +6,10 @@ namespace DoughnutHelper.Domain.Entities
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int QuestionId { get; set; }
+        public int QuestionMessageId { get; set; }
         public Answers Answer { get; set; }
 
         public User? User { get; set; }
-        public Question Question { get; set; }
+        public Message Question { get; set; }
     }
 }
