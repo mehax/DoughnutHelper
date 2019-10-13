@@ -5,10 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Messages\Commands" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\DoughnutHelper.Domain\DoughnutHelper.Domain.csproj" />
       <ProjectReference Include="..\DoughnutHelper.Persistence\DoughnutHelper.Persistence.csproj" />
     </ItemGroup>

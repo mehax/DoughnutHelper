@@ -10,6 +10,6 @@ namespace DoughnutHelper.Domain.Entities
         public Answers Answer { get; set; }
 
         public User? User { get; set; }
-        public Message Question { get; set; }
+        public Message? QuestionMessage { get; set; }
     }
 }

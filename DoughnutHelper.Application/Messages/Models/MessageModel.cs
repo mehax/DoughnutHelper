@@ -8,7 +8,7 @@ namespace DoughnutHelper.Application.Messages.Models
         public string MessageText { get; set; }
         public bool IsQuestion { get; set; }
 
-        public static MessageModel CreateMessage(Message message)
+        public static MessageModel CreateModel(Message message)
         {
             return new MessageModel
             {

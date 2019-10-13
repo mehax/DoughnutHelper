@@ -25,16 +25,16 @@ namespace DoughnutHelper.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add MediatR (Application)
+            // Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddMediatR(typeof(GetNextMessageQuery).GetTypeInfo().Assembly);
             
-            // Add DbContext (Persistence)
+            // Persistence
             services.AddDbContext<DoughnutHelperDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             
-            services.AddControllersWithViews();
-            // In production, the Angular files will be served from this directory
+            // Presentation
+            services.AddControllers();
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
         }
 
@@ -60,13 +60,7 @@ namespace DoughnutHelper.WebUI
             }
 
             app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
             app.UseSpa(spa =>
             {

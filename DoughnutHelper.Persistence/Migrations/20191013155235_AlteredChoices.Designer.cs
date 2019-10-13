@@ -4,14 +4,16 @@ using DoughnutHelper.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DoughnutHelper.Persistence.Migrations
 {
     [DbContext(typeof(DoughnutHelperDbContext))]
-    partial class DoughnutHelperDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191013155235_AlteredChoices")]
+    partial class AlteredChoices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,78 +70,6 @@ namespace DoughnutHelper.Persistence.Migrations
                     b.HasIndex("ParentId");
 
                     b.ToTable("Messages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IsQuestion = true,
-                            Title = "Do I want a doughnut?"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ByAnswer = 1,
-                            IsQuestion = true,
-                            ParentId = 1,
-                            Title = "Do I deserve it?"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ByAnswer = 1,
-                            IsQuestion = true,
-                            ParentId = 2,
-                            Title = "Are you sure?"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ByAnswer = 0,
-                            IsQuestion = true,
-                            ParentId = 2,
-                            Title = "Is it a good doughnut?"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ByAnswer = 0,
-                            IsQuestion = true,
-                            ParentId = 1,
-                            Title = "Maybe you want an apple?"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ByAnswer = 1,
-                            IsQuestion = false,
-                            ParentId = 3,
-                            Title = "Get it."
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ByAnswer = 0,
-                            IsQuestion = false,
-                            ParentId = 3,
-                            Title = "Do jumping jacks first."
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ByAnswer = 1,
-                            IsQuestion = false,
-                            ParentId = 4,
-                            Title = "What are you waiting for? Grab it now."
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ByAnswer = 0,
-                            IsQuestion = false,
-                            ParentId = 4,
-                            Title = "Wait 'till you find a sinful, unforgettable doughnut."
-                        });
                 });
 
             modelBuilder.Entity("DoughnutHelper.Domain.Entities.User", b =>

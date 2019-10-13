@@ -6,7 +6,7 @@ namespace DoughnutHelper.Application.Messages.Queries
 {
     public class GetNextMessageQuery : IRequest<MessageModel>
     {
-        public int QuestionMessageId { get; set; }
-        public Answers Answer { get; set; }
+        public int? QuestionMessageId { get; set; }
+        public Answers? Answer { get; set; }
     }
 }

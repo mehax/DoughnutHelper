@@ -4,14 +4,16 @@ using DoughnutHelper.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DoughnutHelper.Persistence.Migrations
 {
     [DbContext(typeof(DoughnutHelperDbContext))]
-    partial class DoughnutHelperDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191013160431_SeedMessagesTable")]
+    partial class SeedMessagesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

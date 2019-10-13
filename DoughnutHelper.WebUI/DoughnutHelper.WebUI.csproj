@@ -21,13 +21,29 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\src\app\components\stats\stats.component.css" />
+        <Content Include="ClientApp\src\app\components\stats\stats.component.html" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+        <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.css" />
+        <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.html" />
+        <None Include="ClientApp\src\app\models\MessageModel.ts" />
+        <None Include="ClientApp\src\app\models\User.ts" />
+        <None Include="ClientApp\src\app\services\user.service.spec.ts" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DoughnutHelper.Application\DoughnutHelper.Application.csproj" />
       <ProjectReference Include="..\DoughnutHelper.Persistence\DoughnutHelper.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ClientApp\src\app\components" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Users\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Users\_ViewImports.cshtml" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
