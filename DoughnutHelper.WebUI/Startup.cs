@@ -27,11 +27,18 @@ namespace DoughnutHelper.WebUI
         {
             // Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-            services.AddMediatR(typeof(GetNextMessageQuery).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(GetUserNextMessageQuery).GetTypeInfo().Assembly);
             
             // Persistence
             services.AddDbContext<DoughnutHelperDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
+            // Add cors
+            services.AddCors(options =>
+                {
+                    options.AddPolicy("CorsPolicy",
+                        builder => { builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod(); });
+                });
             
             // Presentation
             services.AddControllers();
@@ -44,6 +51,8 @@ namespace DoughnutHelper.WebUI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
+                app.UseCors("CorsPolicy");
             }
             else
             {

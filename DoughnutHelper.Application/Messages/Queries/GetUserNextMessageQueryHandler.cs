@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using DoughnutHelper.Application.Messages.Models;
@@ -8,22 +9,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DoughnutHelper.Application.Messages.Queries
 {
-    public class GetNextMessageQueryHandler : IRequestHandler<GetNextMessageQuery, MessageModel>
+    public class GetUserNextMessageQueryHandler : IRequestHandler<GetUserNextMessageQuery, MessageModel>
     {
         private DoughnutHelperDbContext _dbContext;
 
-        public GetNextMessageQueryHandler(DoughnutHelperDbContext dbContext)
+        public GetUserNextMessageQueryHandler(DoughnutHelperDbContext dbContext)
         {
             _dbContext = dbContext;
         }
         
-        public async Task<MessageModel> Handle(GetNextMessageQuery request, CancellationToken cancellationToken)
+        public async Task<MessageModel> Handle(GetUserNextMessageQuery request, CancellationToken cancellationToken)
         {
-            var nextQuestion = new Message();
-            if (request.QuestionMessageId != null)
+            var lastChoice = await _dbContext.Choices
+                .OrderBy(choice => choice.Id)
+                .LastOrDefaultAsync(choice => choice.UserId == request.UserId, cancellationToken);
+            
+            Message nextQuestion;
+            if (lastChoice != null)
             {
                 nextQuestion = await _dbContext.Messages.FirstOrDefaultAsync(message =>
-                    message.ParentId == request.QuestionMessageId.Value && message.ByAnswer == request.Answer.Value, cancellationToken);   
+                    message.ParentId == lastChoice.QuestionMessageId && message.ByAnswer == lastChoice.Answer,
+                    cancellationToken);
             }
             else
             {

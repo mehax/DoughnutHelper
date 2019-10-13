@@ -1,1 +1,12 @@
-<h1>Hello, world!</h1>
+<div *ngIf="!!message">
+    <h4 class="card-title text-center">{{ message.messageText }}</h4>
+
+    <div class="row mt-5" *ngIf="message.isQuestion">
+        <div class="col col-md-3 offset-md-3">
+            <button class="btn btn-block btn-success" (click)="submitMessage(true)">Yes</button>
+        </div>
+        <div class="col col-md-3">
+            <button class="btn btn-block btn-danger" (click)="submitMessage(false)">No</button>
+        </div>
+    </div>
+</div>

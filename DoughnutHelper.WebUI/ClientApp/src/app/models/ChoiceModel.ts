@@ -1,6 +1,6 @@
-﻿import {UserModel} from "./UserModel";
-import {MessageModel} from "./MessageModel";
-import {Answers} from "../enums/Answers";
+﻿import {UserModel} from './UserModel';
+import {MessageModel} from './MessageModel';
+import {Answers} from '../enums/Answers';
 
 export interface ChoiceModel {
   userId: number;

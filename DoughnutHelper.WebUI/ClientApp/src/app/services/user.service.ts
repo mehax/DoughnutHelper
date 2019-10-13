@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../environments/environment";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {UserModel} from "../models/UserModel";
+import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {UserModel} from '../models/UserModel';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +12,24 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<UserModel[]> {
+  public getAll(): Observable<UserModel[]> {
     return this.http.get<UserModel[]>(this.baseUrl);
   }
 
-  getById(id: number): Observable<UserModel> {
+  public getById(id: number): Observable<UserModel> {
     return this.http.get<UserModel>(this.baseUrl + `/${id}`);
   }
 
-  create(name: string): Observable<number> {
+  public create(name: string): Observable<number> {
     return this.http.post<number>(this.baseUrl, {name: name});
   }
 
-  getCurrentUserId(): number {
+  public getCurrentUserId(): number {
+    // tslint:disable-next-line:radix
     return parseInt(localStorage.getItem('userId'));
   }
 
-  saveCurrentUserId(id: number): void {
+  public saveCurrentUserId(id: number): void {
     localStorage.setItem('userId', '' + id);
   }
 }

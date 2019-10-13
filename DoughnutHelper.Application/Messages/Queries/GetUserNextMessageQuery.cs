@@ -4,9 +4,8 @@ using MediatR;
 
 namespace DoughnutHelper.Application.Messages.Queries
 {
-    public class GetNextMessageQuery : IRequest<MessageModel>
+    public class GetUserNextMessageQuery : IRequest<MessageModel>
     {
-        public int? QuestionMessageId { get; set; }
-        public Answers? Answer { get; set; }
+        public int UserId { get; set; }
     }
 }
