@@ -7,8 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
-import {StatsComponent} from "./components/stats/stats.component";
-import {RegisterComponent} from "./components/register/register.component";
+import {StatsComponent} from './components/stats/stats.component';
+import {RegisterComponent} from './components/register/register.component';
+import {AuthGuardService} from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {RegisterComponent} from "./components/register/register.component";
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthGuardService] },
       { path: 'register', component: RegisterComponent },
     ])
   ],
