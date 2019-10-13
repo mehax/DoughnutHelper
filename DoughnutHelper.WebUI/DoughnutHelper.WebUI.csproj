@@ -21,24 +21,29 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\src\app\app.component.html" />
+        <Content Include="ClientApp\src\app\components\home\home.component.html" />
+        <Content Include="ClientApp\src\app\components\nav-menu\nav-menu.component.css" />
+        <Content Include="ClientApp\src\app\components\nav-menu\nav-menu.component.html" />
+        <Content Include="ClientApp\src\app\components\register\register.component.css" />
+        <Content Include="ClientApp\src\app\components\register\register.component.html" />
         <Content Include="ClientApp\src\app\components\stats\stats.component.css" />
         <Content Include="ClientApp\src\app\components\stats\stats.component.html" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.css" />
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.html" />
+        <None Include="ClientApp\src\app\enums\Answers.ts" />
+        <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
         <None Include="ClientApp\src\app\models\MessageModel.ts" />
-        <None Include="ClientApp\src\app\models\User.ts" />
+        <None Include="ClientApp\src\app\models\UserMoel.ts" />
+        <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\user.service.spec.ts" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DoughnutHelper.Application\DoughnutHelper.Application.csproj" />
       <ProjectReference Include="..\DoughnutHelper.Persistence\DoughnutHelper.Persistence.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="ClientApp\src\app\components" />
     </ItemGroup>
 
     <ItemGroup>
