@@ -1,11 +1,11 @@
 using System.Threading;
 using System.Threading.Tasks;
-using DoughnutHelper.Application.Users.Models;
+using DoughnutHelper.Application.Models;
 using DoughnutHelper.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoughnutHelper.Application.Users.Queries
+namespace DoughnutHelper.Application.Queries.QueryHandlers
 {
     public class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserModel>
     {

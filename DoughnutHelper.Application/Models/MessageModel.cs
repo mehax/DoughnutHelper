@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using DoughnutHelper.Domain.Entities;
 using DoughnutHelper.Domain.Enumerations;
 
-namespace DoughnutHelper.Application.Messages.Models
+namespace DoughnutHelper.Application.Models
 {
     public class MessageModel
     {

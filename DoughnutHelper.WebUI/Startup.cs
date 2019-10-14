@@ -1,5 +1,5 @@
 using System.Reflection;
-using DoughnutHelper.Application.Messages.Queries;
+using DoughnutHelper.Application.Queries;
 using DoughnutHelper.Persistence;
 using MediatR;
 using MediatR.Pipeline;

@@ -1,10 +1,9 @@
 using System;
 using System.Linq.Expressions;
-using DoughnutHelper.Application.Users.Models;
 using DoughnutHelper.Domain.Entities;
 using DoughnutHelper.Domain.Enumerations;
 
-namespace DoughnutHelper.Application.Messages.Models
+namespace DoughnutHelper.Application.Models
 {
     public class ChoiceModel
     {

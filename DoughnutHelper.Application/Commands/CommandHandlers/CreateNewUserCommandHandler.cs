@@ -4,7 +4,7 @@ using DoughnutHelper.Domain.Entities;
 using DoughnutHelper.Persistence;
 using MediatR;
 
-namespace DoughnutHelper.Application.Users.Commands
+namespace DoughnutHelper.Application.Commands.CommandHandlers
 {
     public class CreateNewUserCommandHandler : IRequestHandler<CreateNewUserCommand, int>
     {

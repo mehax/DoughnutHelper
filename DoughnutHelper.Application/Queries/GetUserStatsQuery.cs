@@ -1,7 +1,7 @@
-using DoughnutHelper.Application.Messages.Models;
+using DoughnutHelper.Application.Models;
 using MediatR;
 
-namespace DoughnutHelper.Application.Messages.Queries
+namespace DoughnutHelper.Application.Queries
 {
     public class GetUserStatsQuery : IRequest<StatsModel>
     {

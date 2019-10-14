@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace DoughnutHelper.Application.Users.Commands
+namespace DoughnutHelper.Application.Commands
 {
     public class CreateNewUserCommand : IRequest<int>
     {

@@ -1,7 +1,7 @@
 using DoughnutHelper.Domain.Enumerations;
 using MediatR;
 
-namespace DoughnutHelper.Application.Messages.Commands
+namespace DoughnutHelper.Application.Commands
 {
     public class CreateUserChoiceCommand : IRequest<Unit>
     {

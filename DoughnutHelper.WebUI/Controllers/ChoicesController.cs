@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DoughnutHelper.Application.Messages.Commands;
-using DoughnutHelper.Application.Messages.Models;
-using DoughnutHelper.Application.Messages.Queries;
+using DoughnutHelper.Application.Commands;
+using DoughnutHelper.Application.Models;
+using DoughnutHelper.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

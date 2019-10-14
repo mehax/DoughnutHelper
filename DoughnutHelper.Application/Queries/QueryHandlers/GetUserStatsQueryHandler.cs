@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
-using DoughnutHelper.Application.Messages.Models;
+using DoughnutHelper.Application.Models;
 using MediatR;
 
-namespace DoughnutHelper.Application.Messages.Queries
+namespace DoughnutHelper.Application.Queries.QueryHandlers
 {
     public class GetUserStatsQueryHandler : IRequestHandler<GetUserStatsQuery, StatsModel>
     {

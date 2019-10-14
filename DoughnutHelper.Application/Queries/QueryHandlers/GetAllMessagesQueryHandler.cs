@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using DoughnutHelper.Application.Messages.Models;
+using DoughnutHelper.Application.Models;
 using DoughnutHelper.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoughnutHelper.Application.Messages.Queries
+namespace DoughnutHelper.Application.Queries.QueryHandlers
 {
     public class GetAllMessagesQueryHandler : IRequestHandler<GetAllMessagesQuery, List<MessageModel>>
     {

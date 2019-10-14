@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DoughnutHelper.Application.Messages.Models
+namespace DoughnutHelper.Application.Models
 {
     public class StatsModel
     {

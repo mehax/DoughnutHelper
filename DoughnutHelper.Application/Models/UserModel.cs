@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using DoughnutHelper.Domain.Entities;
 
-namespace DoughnutHelper.Application.Users.Models
+namespace DoughnutHelper.Application.Models
 {
     public class UserModel
     {
