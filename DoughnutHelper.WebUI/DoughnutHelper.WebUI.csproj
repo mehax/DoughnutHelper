@@ -29,14 +29,27 @@
         <Content Include="ClientApp\src\app\components\register\register.component.html" />
         <Content Include="ClientApp\src\app\components\stats\stats.component.css" />
         <Content Include="ClientApp\src\app\components\stats\stats.component.html" />
+        <Content Include="ClientApp\src\app\components\tree-node\tree-node.component.css" />
+        <Content Include="ClientApp\src\app\components\tree-node\tree-node.component.html" />
+        <Content Include="ClientApp\src\app\components\tree\tree.component.css" />
+        <Content Include="ClientApp\src\app\components\tree\tree.component.html" />
+        <Content Include="ClientApp\src\assets\.gitkeep" />
+        <Content Include="ClientApp\src\index.html" />
+        <Content Include="ClientApp\src\karma.conf.js" />
+        <Content Include="ClientApp\src\styles.css" />
+        <Content Include="ClientApp\src\tsconfig.app.json" />
+        <Content Include="ClientApp\src\tsconfig.server.json" />
+        <Content Include="ClientApp\src\tsconfig.spec.json" />
+        <Content Include="ClientApp\src\tslint.json" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.css" />
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.html" />
         <None Include="ClientApp\src\app\enums\Answers.ts" />
         <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
+        <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
         <None Include="ClientApp\src\app\models\MessageModel.ts" />
-        <None Include="ClientApp\src\app\models\UserMoel.ts" />
+        <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\user.service.spec.ts" />
     </ItemGroup>
@@ -49,6 +62,10 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Users\Error.cshtml" />
       <_ContentIncludedByDefault Remove="Users\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="ClientApp\src\tsconfig.app.json" />
+      <_ContentIncludedByDefault Remove="ClientApp\src\tsconfig.server.json" />
+      <_ContentIncludedByDefault Remove="ClientApp\src\tsconfig.spec.json" />
+      <_ContentIncludedByDefault Remove="ClientApp\src\tslint.json" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
