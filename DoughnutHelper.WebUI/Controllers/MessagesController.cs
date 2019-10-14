@@ -19,6 +19,12 @@ namespace DoughnutHelper.WebUI.Controllers
         {
             _mediator = mediator;
         }
+
+        public async Task<ActionResult<List<MessageModel>>> GetAllMessages()
+        {
+            var query = new GetAllMessagesQuery();
+            return Ok(await _mediator.Send(query));
+        }
         
         [HttpGet("{userId}")]
         public async Task<ActionResult<MessageModel>> GetUserNextMessage([FromRoute]int userId)

@@ -1,1 +1,14 @@
-<p>stats works!</p>
+<div class="row">
+    <div class="col-md-10">
+        <app-tree #treeComponent></app-tree>
+    </div>
+
+    <div class="col-md-2">
+        <h5>Users</h5>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" onclick="return false"
+               *ngFor="let user of users" (click)="selectUser(user.id)">{{ user.name }}</a>
+        </div>
+    </div>
+</div>

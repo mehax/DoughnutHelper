@@ -12,6 +12,10 @@ export class MessageService {
 
   constructor(private http: HttpClient) { }
 
+  public getAll(): Observable<MessageModel[]> {
+    return this.http.get<MessageModel[]>(this.baseUrl);
+  }
+
   public getUserNextMessage(userId: number): Observable<MessageModel> {
     return this.http.get<MessageModel>(this.baseUrl + `/${userId}`);
   }
