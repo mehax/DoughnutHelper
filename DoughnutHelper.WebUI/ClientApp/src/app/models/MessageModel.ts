@@ -7,5 +7,10 @@ export class MessageModel {
   parentId?: number;
   byAnswer?: Answers;
 
-  isHighlighted = false;
+  isChosen = false;
+  isNextMessage = false;
+
+  get isHighlighted() {
+    return this.isChosen || this.isNextMessage;
+  }
 }

@@ -3,6 +3,7 @@ import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UserModel} from '../models/UserModel';
+import {StatsModel} from '../models/StatsModel';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class UserService {
 
   public getById(id: number): Observable<UserModel> {
     return this.http.get<UserModel>(this.baseUrl + `/${id}`);
+  }
+
+  public getStats(id: number): Observable<StatsModel> {
+    return this.http.get<StatsModel>(this.baseUrl + `/${id}/stats`);
   }
 
   public create(name: string): Observable<number> {

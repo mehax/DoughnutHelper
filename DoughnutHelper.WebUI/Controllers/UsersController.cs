@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DoughnutHelper.Application.Messages.Models;
+using DoughnutHelper.Application.Messages.Queries;
 using DoughnutHelper.Application.Users.Commands;
 using DoughnutHelper.Application.Users.Models;
 using DoughnutHelper.Application.Users.Queries;
@@ -37,6 +39,13 @@ namespace DoughnutHelper.WebUI.Controllers
         public async Task<ActionResult<int>> Create(CreateNewUserCommand command)
         {
             return Ok(await _mediator.Send(command));
+        }
+
+        [HttpGet("{userId}/stats")]
+        public async Task<ActionResult<StatsModel>> GetUserStats([FromRoute]int userId)
+        {
+            var query = new GetUserStatsQuery {UserId = userId};
+            return Ok(await _mediator.Send(query));
         }
     }
 }

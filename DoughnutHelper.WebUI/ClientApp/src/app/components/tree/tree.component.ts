@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MessageModel} from '../../models/MessageModel';
 import {MessageService} from '../../services/message.service';
-import {ChoiceService} from '../../services/choice.service';
+import {TreeNodeComponent} from '../tree-node/tree-node.component';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-tree',
@@ -9,10 +10,11 @@ import {ChoiceService} from '../../services/choice.service';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements OnInit {
+  @ViewChild('treeNodeComponent') treeNodeComponent: TreeNodeComponent;
   messages: MessageModel[];
 
   constructor(private messageService: MessageService,
-              private choiceService: ChoiceService) { }
+              private userService: UserService) { }
 
   ngOnInit() {
     this.getAllMessages();
@@ -30,15 +32,11 @@ export class TreeComponent implements OnInit {
 
   // TODO: this is not working, needs to change logic
   public updateSelectedUser(userId: number): void {
-    this.choiceService.getUserChoices(userId).subscribe(choices => {
-      choices.forEach(choice => {
-        for (let i = 0; i < this.messages.length; i++) {
-          const message = this.messages[i];
-          if (message.messageId === choice.questionMessageId && message.byAnswer === choice.answer) {
-            this.messages[i].isHighlighted = true;
-          }
-        }
-      });
+    this.userService.getStats(userId).subscribe(stats => {
+      const highlightedMessagesId = stats.choices.map(choice => choice.questionMessageId);
+      const nextMessageId = stats.nextMessage.messageId;
+
+      this.treeNodeComponent.highlightNodes(highlightedMessagesId, nextMessageId);
     });
   }
 }

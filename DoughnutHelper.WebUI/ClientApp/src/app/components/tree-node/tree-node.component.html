@@ -1,10 +1,11 @@
-<a href="#" [ngClass]="{'borer-info': nodeMessage.isHighlighted}">
+<a href="#" onclick="return false"
+   [ngClass]="{'bg-secondary':nodeMessage.isChosen,'bg-success':nodeMessage.isNextMessage,'text-white':nodeMessage.isHighlighted}">
     <span *ngIf="nodeMessage.byAnswer !== null">By answering: {{ nodeMessage.byAnswer == 1 ? 'Yes' : 'No' }}<br></span>
     {{ nodeMessage.messageText }}
 </a>
 
 <ul *ngIf="nodeMessage.isQuestion">
     <li *ngFor="let node of childrenMessages">
-        <app-tree-node [nodeMessage]="node" [allMessages]="allMessages"></app-tree-node>
+        <app-tree-node #treeNodeComponents [nodeMessage]="node" [allMessages]="allMessages"></app-tree-node>
     </li>
 </ul>
