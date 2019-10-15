@@ -69,15 +69,33 @@ ul::before{
 }
 
 a{
-    border: 1px solid #ccc;
-    padding: 5px 10px;
+    /*border: 1px solid #ccc;*/
+    /*padding: 5px 10px;*/
     text-decoration: none;
     color: #666;
-    font-family: arial, verdana, tahoma;
     font-size: 11px;
     display: inline-block;
     max-width: 100px;
+    min-width: 100px;
+}
 
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+a:hover > .message,
+a:hover+ul a > .message {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+
+.answer {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.message {
+    color: #000;
+
+    border: 1px solid #ccc;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -85,20 +103,16 @@ a{
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+    padding: 6px;
+    font-weight: 700;
 }
 
-/*Time for some hover effects*/
-/*We will apply the hover effect the the lineage of the element also*/
-a:hover, a:hover+ul a {
-    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-}
-/*Connector styles on hover*/
-a:hover+ul li::after,
-a:hover+ul li::before,
-a:hover+ul::before,
-a:hover+ul ul::before{
-    border-color:  #94a0b4;
+.is-chosen > .message {
+    background: #90a4ae;
+    color: #000;
 }
 
-/*Thats all. I hope you enjoyed it.
-Thanks :)*/
+.is-next-message > .message {
+    background: #62757f;
+    color: #fff;
+}

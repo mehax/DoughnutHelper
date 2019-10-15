@@ -46,9 +46,12 @@
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.css" />
         <None Include="ClientApp\src\app\components\nav-menu\nav-menu.component.html" />
         <None Include="ClientApp\src\app\enums\Answers.ts" />
+        <None Include="ClientApp\src\app\enums\Answers.ts" />
+        <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
         <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
         <None Include="ClientApp\src\app\models\ChoiceModel.ts" />
         <None Include="ClientApp\src\app\models\MessageModel.ts" />
+        <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\auth-guard.service.spec.ts" />
         <None Include="ClientApp\src\app\services\user.service.spec.ts" />

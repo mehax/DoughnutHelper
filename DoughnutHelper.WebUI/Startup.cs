@@ -35,10 +35,10 @@ namespace DoughnutHelper.WebUI
             
             // Add cors
             services.AddCors(options =>
-                {
-                    options.AddPolicy("CorsPolicy",
-                        builder => { builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod(); });
-                });
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => { builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod(); });
+            });
             
             // Presentation
             services.AddControllers();

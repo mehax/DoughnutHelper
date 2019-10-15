@@ -9,8 +9,4 @@ export class MessageModel {
 
   isChosen = false;
   isNextMessage = false;
-
-  get isHighlighted() {
-    return this.isChosen || this.isNextMessage;
-  }
 }

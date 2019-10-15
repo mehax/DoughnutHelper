@@ -22,4 +22,10 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/']);
     });
   }
+
+  public submitKeyEvent(event) {
+    if (event.keyCode === 13) { // if `ENTER`
+      this.submit();
+    }
+  }
 }
