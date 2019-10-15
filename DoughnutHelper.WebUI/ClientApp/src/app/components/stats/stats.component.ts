@@ -9,7 +9,7 @@ import {TreeComponent} from '../tree/tree.component';
   styleUrls: ['./stats.component.css']
 })
 export class StatsComponent implements OnInit {
-  @ViewChild('treeComponent') treeComponent: TreeComponent;
+  @ViewChild('treeComponent', {static: false}) treeComponent: TreeComponent;
   users: UserModel[];
 
   constructor(private userService: UserService) { }

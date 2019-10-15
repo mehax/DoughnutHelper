@@ -10,7 +10,7 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements OnInit {
-  @ViewChild('treeNodeComponent') treeNodeComponent: TreeNodeComponent;
+  @ViewChild('treeNodeComponent', {static: false}) treeNodeComponent: TreeNodeComponent;
   messages: MessageModel[];
 
   constructor(private messageService: MessageService,
