@@ -34,4 +34,4 @@ Run the project by adding `DoughnutHelper.WebUI` as a startup project:
 ```dotnet run --project DoughnutHelper.WebUI```
 
 ## Demo link
-```http://doughnut.mehax.info```
+[http://doughnut.mehax.info](http://doughnut.mehax.info)
